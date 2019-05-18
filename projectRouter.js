@@ -13,3 +13,61 @@ router.get("/", (req, res) => {
       res.status(500).json({error:{message: " The action could not be performed"}})
     })
 })
+
+router.get("/:id", (req, res) => {
+  const id = req.params.id
+
+  dbProject.getProjectActions(id)
+    .then( projectActions => {
+      res.status(200).json(projectActions)
+    })
+    .catch( error => {
+      res.status(500).json({error:{message: " The action could not be performed"}})
+    })
+})
+
+router.post("/", (req, res) => {
+  const newProject = req.body
+
+  dbProject.insert(newProject)
+    .then( action => {
+      res.status(200).json(action)
+    })
+    .catch( error => {
+      res.status(500).json({error:{message: " The action could not be performed"}})
+    })
+})
+
+router.put("/:id", (req, res) => {
+  const updateProject = req.body
+  const id = req.params.id
+
+  dbProject.update(id, updateProject)
+    .then( project => {
+      res.status(200).json(project)
+    })
+    .catch(error => {
+      res.status(500).json({error:{message: " The action could not be performed"}})
+    })
+})
+
+router.delete("/:id", (req, res) => {
+  const projectid = req.params.id
+
+  dbProject.remove(projectid)
+    .then(project => {
+      if (project) {
+        dbProject.remove(project)
+          .then(removeProject => {
+            res.status(201).json(removeProject)
+          })
+      } else {
+        res.status(404).json({error:{message: " The action could not be performed"}})
+      }
+    })
+    .catch(error => {
+      res.status(500).json({error:{message: " The action could not be performed"}})
+    })
+})
+
+module.exports = router;
