@@ -1,6 +1,6 @@
 const server = require('./server');
 
-const port = process.env.port || 9393
+const port = process.env.PORT || 9393
 
 server.listen(port, () => {
   console.log('Port 9393 is now in use')
