@@ -38,12 +38,12 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Project Manager_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [ Done ] Create a forked copy of this project.
+- [ Done ] Add your _Project Manager_ as collaborator on Github.
+- [ Done ] Clone your forked version of the Repository.
+- [ Done ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [ Done ] Implement the project on this Branch, committing changes regularly.
+- [ Done ] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
